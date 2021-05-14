@@ -42,6 +42,18 @@ public class Annotation implements Serializable {
 		}
 	}
 	
+	public boolean hasType(String t) {
+		return this.getType().contentEquals(t);
+	}
+	
+	public boolean hasType(String[] t) {
+		for(String t1:t) {
+			if(this.hasType(t1))return true;
+		}
+		
+		return false;
+	}
+	
 	public int getSize() {return getEnd()-getStart();}
 	
 	public String getId() {
