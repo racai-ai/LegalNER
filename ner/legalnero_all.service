@@ -1,0 +1,15 @@
+[Unit]
+Description=LegalNERo LEGAL, PER, LOC, ORG, TIME
+After=network.target auditd.service
+
+[Service]
+ExecStart=/data/LegalNERo/start_all.sh
+WorkingDirectory=/data/LegalNERo
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=control-group
+Restart=on-failure
+RestartPreventExitStatus=255
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

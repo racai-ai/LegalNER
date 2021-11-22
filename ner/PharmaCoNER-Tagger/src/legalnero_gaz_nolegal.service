@@ -1,0 +1,15 @@
+[Unit]
+Description=LegalNERo Gazetteer PER, LOC, ORG, TIME
+After=network.target auditd.service
+
+[Service]
+ExecStart=/data/LegalNERo/PharmaCoNER-Tagger/src/start_nolegal.sh
+WorkingDirectory=/data/LegalNERo/PharmaCoNER-Tagger/src
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=control-group
+Restart=on-failure
+RestartPreventExitStatus=255
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
