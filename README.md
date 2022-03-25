@@ -1,6 +1,16 @@
 # LegalNER
 NER in the Romanian Legal domain
 
+### CorpusMerge
+
+```
+java -cp CorpusMerge.jar CorpusMerge
+```
+
+Allows merging annotations from different annotators. The corpus folder must contain multiple sub-folders with the annotations (in BRAT, .ann format). Result will be created in a new "merged" sub-folder.
+
+
+
 ### Utils
 
 ```
